@@ -195,9 +195,9 @@ export default function Board() {
 
     // Create new nodes, links and texts
     const simulation = createSimulation(ref.current, nodes, links);
+    const {appendedLinks} = appendLinks(svg, links);
     const {appendedNodes} = appendNodes(svg, simulation, nodes);
     const {appendedTexts} = appendTexts(svg, nodes);
-    const {appendedLinks} = appendLinks(svg, links);
     addSimulationTick(simulation, appendedNodes, appendedLinks, appendedTexts);
   }, [svg, links, nodes]);
 
